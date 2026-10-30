@@ -1,0 +1,55 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Environment variables & secrets
+.env
+.env.*
+!.env.example
+
+# Local Databases (SQLite)
+*.db
+*.sqlite
+*.sqlite3
+gym_churn.db
+
+# Testing and Coverage
+.pytest_cache/
+.pytest-tmp*/
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
+# Linting & Static Analysis
+.mypy_cache/
+.ruff_cache/
+
+# Logs & temporary files
+*.log
+scratch/
+tmp/
+
+# IDEs and Editors
+.vscode/
+.idea/
+*.swp
+
+# Operating System files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Docker
+docker-compose.override.yml

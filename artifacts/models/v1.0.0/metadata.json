@@ -1,0 +1,194 @@
+{
+  "model_version": "1.0.0",
+  "created_at": "2026-10-21T23:05:45.336473+00:00",
+  "dataset": "C:\\Users\\sebas\\Desktop\\SW2\\2do Parcial\\ia-machine-learnig-asistido-sw2\\gym-churn-prediction\\datasets\\synthetic_gym_churn.csv",
+  "dataset_sha256": "33ad1578e1ad537d948676dcb73cabb3cb3c7bc44df42bcc8b2ee080c3c6d9de",
+  "library_versions": {
+    "sklearn": "1.9.1",
+    "pandas": "3.0.5",
+    "numpy": "2.5.3",
+    "joblib": "1.6.0"
+  },
+  "feature_names": [
+    "duration_days",
+    "days_until_expiration",
+    "previous_renewals_count",
+    "client_seniority_days",
+    "attendances_last_7d",
+    "attendances_last_30d",
+    "attendances_last_60d",
+    "days_since_last_attendance",
+    "weekly_frequency",
+    "frequency_variation",
+    "attendance_trend",
+    "pct_weeks_without_visit",
+    "inactivity_max_days",
+    "routine_compliance_score",
+    "membership_type"
+  ],
+  "transformed_feature_names": [
+    "numeric__duration_days",
+    "numeric__days_until_expiration",
+    "numeric__previous_renewals_count",
+    "numeric__client_seniority_days",
+    "numeric__attendances_last_7d",
+    "numeric__attendances_last_30d",
+    "numeric__attendances_last_60d",
+    "numeric__days_since_last_attendance",
+    "numeric__weekly_frequency",
+    "numeric__frequency_variation",
+    "numeric__attendance_trend",
+    "numeric__pct_weeks_without_visit",
+    "numeric__inactivity_max_days",
+    "numeric__routine_compliance_score",
+    "categorical__membership_type_Anual",
+    "categorical__membership_type_Mensual",
+    "categorical__membership_type_Trimestral"
+  ],
+  "target": "churn_30d",
+  "threshold": 0.5,
+  "random_state": 42,
+  "target_definition": "No renewal by membership expiration + 30 days",
+  "data_kind": "synthetic; metrics do not establish real-world performance",
+  "pr_auc_definition": "average precision (non-interpolated precision-recall area)",
+  "confusion_matrix_labels": [
+    0,
+    1
+  ],
+  "metrics": {
+    "accuracy": 0.8607142857142858,
+    "precision": 0.7692307692307693,
+    "recall": 0.7692307692307693,
+    "f1_score": 0.7692307692307693,
+    "roc_auc": 0.8998168858487566,
+    "pr_auc": 0.823130731525027,
+    "brier_score": 0.10609857614053665,
+    "confusion_matrix": [
+      [
+        352,
+        39
+      ],
+      [
+        39,
+        130
+      ]
+    ]
+  },
+  "hyperparameters": {
+    "n_estimators": 150,
+    "max_depth": 8,
+    "min_samples_split": 5,
+    "min_samples_leaf": 3,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "calibration": {
+    "method": "sigmoid",
+    "fit_split": "validation",
+    "api": "FrozenEstimator (prefitted classifier)"
+  },
+  "split_policy": "70/15/15 unique dates; purge train/validation labels crossing next boundary",
+  "purged_rows": 299,
+  "splits": {
+    "train": {
+      "rows": 2340,
+      "start": "2022-01-01T00:00:00",
+      "end": "2024-01-11T00:00:00",
+      "churn_rate": 0.30854700854700856
+    },
+    "validation": {
+      "rows": 401,
+      "start": "2024-02-03T00:00:00",
+      "end": "2024-06-19T00:00:00",
+      "churn_rate": 0.2942643391521197
+    },
+    "test": {
+      "rows": 560,
+      "start": "2024-07-15T00:00:00",
+      "end": "2024-12-31T00:00:00",
+      "churn_rate": 0.30178571428571427
+    }
+  },
+  "impurity_importance": {
+    "numeric__duration_days": 0.003322531271664653,
+    "numeric__days_until_expiration": 0.029279054483640824,
+    "numeric__previous_renewals_count": 0.015480503322451598,
+    "numeric__client_seniority_days": 0.02385370944026295,
+    "numeric__attendances_last_7d": 0.09642505976852013,
+    "numeric__attendances_last_30d": 0.05979521480259116,
+    "numeric__attendances_last_60d": 0.03066905889945154,
+    "numeric__days_since_last_attendance": 0.1077943151852989,
+    "numeric__weekly_frequency": 0.06605604833615804,
+    "numeric__frequency_variation": 0.14013955168891104,
+    "numeric__attendance_trend": 0.2097695447004733,
+    "numeric__pct_weeks_without_visit": 0.028249500765442772,
+    "numeric__inactivity_max_days": 0.04771941016931311,
+    "numeric__routine_compliance_score": 0.13428097114335658,
+    "categorical__membership_type_Anual": 0.0016133270869422996,
+    "categorical__membership_type_Mensual": 0.0031032758979191153,
+    "categorical__membership_type_Trimestral": 0.0024489230376018474
+  },
+  "permutation_importance": {
+    "duration_days": {
+      "mean": -0.00011198716687623733,
+      "std": 0.00031896671687375584
+    },
+    "days_until_expiration": {
+      "mean": -2.118676130102859e-05,
+      "std": 0.002378161833572371
+    },
+    "previous_renewals_count": {
+      "mean": -0.0006688963210703891,
+      "std": 0.0006426547978799671
+    },
+    "client_seniority_days": {
+      "mean": 0.002602944959820652,
+      "std": 0.0018328791530404808
+    },
+    "attendances_last_7d": {
+      "mean": 0.009863950725646409,
+      "std": 0.0020803753659413772
+    },
+    "attendances_last_30d": {
+      "mean": 0.006437748755277561,
+      "std": 0.001269244028762172
+    },
+    "attendances_last_60d": {
+      "mean": 0.00200366228302471,
+      "std": 0.002055750949708432
+    },
+    "days_since_last_attendance": {
+      "mean": 0.015091027406588875,
+      "std": 0.001866026270570084
+    },
+    "weekly_frequency": {
+      "mean": 0.006468015557136009,
+      "std": 0.0019586292705328578
+    },
+    "frequency_variation": {
+      "mean": 0.017376170946896717,
+      "std": 0.00438669655896505
+    },
+    "attendance_trend": {
+      "mean": 0.031150592472646222,
+      "std": 0.0032033031003963174
+    },
+    "pct_weeks_without_visit": {
+      "mean": 0.00202787572451133,
+      "std": 0.000840305849308068
+    },
+    "inactivity_max_days": {
+      "mean": 0.006834243859622391,
+      "std": 0.0021618337343041233
+    },
+    "routine_compliance_score": {
+      "mean": 0.00279967917190016,
+      "std": 0.003530463834138239
+    },
+    "membership_type": {
+      "mean": -0.0005387490730793809,
+      "std": 0.00036841051601148295
+    }
+  },
+  "model_sha256": "5e087edbcbe89eb56da7278f4994480db2c5ee0802056374f45b85cd32045c58"
+}

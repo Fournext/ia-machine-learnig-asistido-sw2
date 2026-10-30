@@ -1,0 +1,21 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: gym-churn-engine
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - ENVIRONMENT=production
+      - MODEL_ARTIFACTS_DIR=artifacts/models
+      - ACTIVE_MODEL_VERSION=1.0.0
+      - JWT_SECRET_KEY=gym-secret-jwt-key-prod-2026
+    volumes:
+      - ./artifacts/models:/app/artifacts/models:ro
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health/live"]
+      interval: 15s
+      timeout: 5s
+      retries: 3
