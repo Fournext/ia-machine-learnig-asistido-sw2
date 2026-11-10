@@ -6,7 +6,7 @@ services:
     container_name: gym-churn-engine
     restart: unless-stopped
     ports:
-      - "8000:8000"
+      - "8002:8000"
     environment:
       - ENVIRONMENT=production
       - MODEL_ARTIFACTS_DIR=artifacts/models
